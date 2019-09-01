@@ -1,0 +1,5 @@
+{
+	"owner": "",  // ID of user account
+	"prefix": "", // Desired prefix
+	"token": ""   // Bot token
+}
