@@ -16,9 +16,8 @@ call npm i
 goto :EOF
 
 :init-config
-for /f %%i in ('.\dialogboxes\InputBox.exe "Enter the desired command prefix" "Prefix"') do set prefix=%%i
-for /f %%i in ('.\dialogboxes\InputBox.exe "Enter your bot's token" "Token"') do set token=%%i
-pause
+for /f %%i in ('.\bin\InputBox.exe "Enter the desired command prefix" "Prefix"') do set prefix=%%i
+for /f %%i in ('.\bin\InputBox.exe "Enter your bot's token" "Token"') do set token=%%i
 if "%prefix%"=="" set prefix=/
 if "%token%"=="" set token=secret
 echo {>config.json
