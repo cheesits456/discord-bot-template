@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "Basic template for a small-scale Discord bot",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheesits456/discord-bot-template.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "template"
+  ],
+  "author": "cheesits456",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cheesits456/discord-bot-template/issues"
+  },
+  "homepage": "https://github.com/cheesits456/discord-bot-template#readme"
+}
