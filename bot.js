@@ -1,6 +1,6 @@
-const fs = require("fs");
-const Discord = require("discord.js");
-let client = new Discord.Client();
+const fs = require("fs"),
+      Discord = require("discord.js"),
+      client = new Discord.Client();
 
 client.config = require("./config.json");
 client.commands = new Discord.Collection();
@@ -19,17 +19,16 @@ client.on("ready", () => {
 });
 
 client.on("message", async msg => {
-  if (msg.author.bot) return;
-  if (!msg.guild) return;
-  let prefix = client.config.prefix;
-  let args = msg.content.slice(prefix.length).trim().split(/ +/g);
-  let command = args.shift().toLowerCase();
+  if (msg.author.bot || !msg.guild) return;
+  let prefix = client.config.prefix,
+      args = msg.content.slice(prefix.length).trim().split(/ +/g),
+      command = args.shift().toLowerCase(),
+      commandfile = client.commands.get(command);
 
-  let commandfile = client.commands.get(command);
   if (commandfile) commandfile.run(client, msg, args);
 });
 
 client.login(client.config.token).catch(err => {
-  if (err.message === "getaddrinfo ENOTFOUND discordapp.com") console.log("Unable to connect to discordapp.com (check network)");
+  if (err.message === "getaddrinfo ENOTFOUND discordapp.com") console.log("Unable to connect to Discord (check network)");
   else if (err.message === "Incorrect login details were provided.") console.log("Invalid bot token was provided - check config.json");
 });
